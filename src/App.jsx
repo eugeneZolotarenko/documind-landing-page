@@ -1,8 +1,9 @@
-import ChatTools from './components/ChatTools'
-import Features from './components/Features'
+import ChatTools from './components/sections/ChatTools'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import HowItWotks from './components/HowItWorks'
+import AskQuestion from './components/sections/AskQuestion'
+import ChatBot from './components/sections/ChatBot'
+import Automation from './components/sections/Automation'
+import Benefits from './components/sections/Benefits'
 
 function App() {
 	return (
@@ -14,6 +15,10 @@ function App() {
 					{/* <HowItWotks /> */}
 					{/* <Features /> */}
 					<ChatTools />
+					<AskQuestion />
+					<ChatBot />
+					<Automation />
+					<Benefits />
 				</main>
 			</div>
 		</>

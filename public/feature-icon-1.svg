@@ -1,0 +1,9 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="crosshair">
+<path id="Icon" d="M20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z" stroke="#4E46DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon_2" d="M20 35V29" stroke="#4E46DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon_3" d="M35 20H29" stroke="#4E46DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon_4" d="M11 20H5" stroke="#4E46DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Icon_5" d="M20 11V5" stroke="#4E46DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
