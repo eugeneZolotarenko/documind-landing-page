@@ -6,6 +6,15 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 
+@layer base {
+	p {
+		@apply text-greyscale-500;
+	}
+	section {
+		@apply py-10 sm:py-20;
+	}
+}
+
 @layer components {
 	.btn {
 		@apply rounded-md border border-transparent px-4 py-2 text-xs md:text-sm;

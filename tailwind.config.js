@@ -28,6 +28,7 @@ export default {
 					950: '#201D49',
 				},
 				greyscale: {
+					10: '#F6F8FA',
 					50: '#FAFAFA',
 					100: '#F5F5F5',
 					200: '#E5E5E5',
