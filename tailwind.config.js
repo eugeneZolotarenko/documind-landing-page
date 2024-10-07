@@ -43,6 +43,7 @@ export default {
 				},
 			},
 			backgroundImage: {
+				'blue-gradient': 'linear-gradient(180deg, #D6F1FF 0%, #E7ECFD 100%)',
 				'primary-gradient': 'linear-gradient(90deg, #6366F1 0%, #A655F6 89.9%)',
 			},
 			boxShadow: {
