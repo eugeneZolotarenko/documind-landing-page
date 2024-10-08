@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import Features from './components/sections/Features'
 import HowItWotks from './components/sections/HowItWorks'
 import Price from './components/sections/Price'
+import Partners from './components/sections/Partners'
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 
 				<main>
 					{/* <Hero /> */}
+					<Partners />
 					<HowItWotks />
 					<Features />
 					<ChatTools />
