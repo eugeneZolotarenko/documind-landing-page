@@ -8,6 +8,7 @@ import Statistic from './components/sections/Statistic'
 import Faq from './components/sections/Faq'
 import Cta from './components/sections/Cta'
 import Footer from './components/Footer'
+import Features from './components/sections/Features'
 
 function App() {
 	return (
@@ -18,7 +19,7 @@ function App() {
 				<main>
 					{/* <Hero /> */}
 					{/* <HowItWotks /> */}
-					{/* <Features /> */}
+					<Features />
 					<ChatTools />
 					<AskQuestion />
 					<ChatBot />

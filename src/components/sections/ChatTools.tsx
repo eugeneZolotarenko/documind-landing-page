@@ -30,13 +30,13 @@ const ChatTools = () => {
 		<section>
 			<div className="container">
 				<div className="flex flex-col items-center gap-4">
-					<SectionSubtitle>Features</SectionSubtitle>
+					<SectionSubtitle>Chat Tools</SectionSubtitle>
 					<SectionTitle>Built for any PDF</SectionTitle>
 				</div>
 				<div className="mt-6 grid gap-3 md:grid-cols-2 md:gap-6">
 					{CHAT_TOOLS_DATA.map((item) => (
 						<div key={item.imageUrl} className="flex flex-col">
-							<div className="bg-greyscale-10 rounded-tl-2xl rounded-tr-2xl pt-3 md:pt-6">
+							<div className="rounded-tl-2xl rounded-tr-2xl bg-greyscale-10 pt-3 md:pt-6">
 								<img src={item.imageUrl} alt="image" />
 							</div>
 							<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
