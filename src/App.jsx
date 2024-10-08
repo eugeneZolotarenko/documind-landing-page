@@ -10,6 +10,7 @@ import Cta from './components/sections/Cta'
 import Footer from './components/Footer'
 import Features from './components/sections/Features'
 import HowItWotks from './components/sections/HowItWorks'
+import Price from './components/sections/Price'
 
 function App() {
 	return (
@@ -26,6 +27,7 @@ function App() {
 					<ChatBot />
 					<Automation />
 					<Benefits />
+					<Price />
 					<Statistic />
 					<Faq />
 					<Cta />

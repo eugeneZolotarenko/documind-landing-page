@@ -3,9 +3,9 @@ import Menu from './Menu'
 
 const Header = () => {
 	return (
-		<header className="sticky left-0 top-4">
+		<header className="sticky left-0 top-4 z-20">
 			<div className="container">
-				<div className="z-10 mx-auto my-4 flex max-w-[900px] items-center justify-between rounded-xl border border-greyscale-100 bg-white p-3">
+				<div className="z-20 mx-auto my-4 flex max-w-[900px] items-center justify-between rounded-xl border border-greyscale-100 bg-white p-3">
 					<a href="/">
 						<img
 							className="max-w-[106px] md:max-w-[145px]"

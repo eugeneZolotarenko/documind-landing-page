@@ -17,10 +17,13 @@ body {
 
 @layer components {
 	.btn {
-		@apply flex max-w-fit items-center gap-2 rounded-md border border-transparent px-4 py-2 text-xs md:text-sm;
+		@apply flex max-w-fit items-center gap-2 rounded-md border border-transparent px-4 py-2 text-xs tracking-[-0.32px] md:text-sm;
 	}
 
 	.btn-primary {
 		@apply bg-primary-gradient font-semibold text-white;
+	}
+	.btn-outline {
+		@apply border border-greyscale-200 font-semibold hover:bg-greyscale-50;
 	}
 }
