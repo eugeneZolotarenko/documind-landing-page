@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
+import Button from '../Button'
 
 const Features = () => {
 	return (
@@ -42,9 +43,11 @@ const Features = () => {
 								</li>
 							</ul>
 
-							<a href="/" className="btn btn-primary">
-								<span>Get Started</span>
-								<img src="/btn-arrow.svg" alt="arrow-icon" />
+							<a href="/">
+								<Button type="gradient">
+									<span>Get Started</span>
+									<img src="/btn-arrow.svg" alt="arrow-icon" />
+								</Button>
 							</a>
 						</div>
 						<div className="mt-auto rounded-tl-2xl rounded-tr-2xl">
@@ -87,9 +90,11 @@ const Features = () => {
 									</li>
 								</ul>
 
-								<a href="/" className="btn btn-primary">
-									<span>Get Started</span>
-									<img src="/btn-arrow.svg" alt="arrow-icon" />
+								<a href="/">
+									<Button type="gradient">
+										<span>Get Started</span>
+										<img src="/btn-arrow.svg" alt="arrow-icon" />
+									</Button>
 								</a>
 							</div>
 						</div>
@@ -128,9 +133,11 @@ const Features = () => {
 									</li>
 								</ul>
 
-								<a href="/" className="btn btn-primary">
-									<span>Get Started</span>
-									<img src="/btn-arrow.svg" alt="arrow-icon" />
+								<a href="/">
+									<Button type="gradient">
+										<span>Get Started</span>
+										<img src="/btn-arrow.svg" alt="arrow-icon" />
+									</Button>
 								</a>
 							</div>
 						</div>

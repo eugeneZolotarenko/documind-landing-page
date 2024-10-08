@@ -1,12 +1,29 @@
 import React from 'react'
-import { MENU_LINKS_DATA } from '../utils/data'
+
+export const MENU_LINKS_DATA = [
+	{
+		title: 'Products',
+		href: '/roducts',
+	},
+	{
+		title: 'AI Tools',
+		href: '/ai-tools',
+	},
+	{
+		title: 'Pricing',
+		href: '/pricing',
+	},
+	{
+		title: 'Blog',
+		href: '/blog',
+	},
+]
 
 const Menu = () => {
-	const links = MENU_LINKS_DATA
 	return (
 		<nav className="hidden flex-1 items-center justify-center md:flex">
 			<ul className="flex gap-8">
-				{links.map((link, idx) => (
+				{MENU_LINKS_DATA.map((link, idx) => (
 					<li key={idx}>
 						<a
 							href={link.href}

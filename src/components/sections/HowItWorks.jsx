@@ -2,6 +2,7 @@ import React from 'react'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
 import Tabs from '../Tabs'
+import Button from '../Button'
 
 const HowItWotks = () => {
 	return (
@@ -17,8 +18,8 @@ const HowItWotks = () => {
 							Our process is designed to be simple and efficient, allowing you
 							to unlock the full potential of your PDFs with minimal effort.
 						</p>
-						<a href="/" className="btn btn-primary">
-							Upload Your PDF
+						<a href="/" className="inline-block">
+							<Button type="gradient">Upload Your PDF</Button>
 						</a>
 					</div>
 				</div>

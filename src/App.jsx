@@ -1,17 +1,21 @@
+import 'swiper/css'
+// Components
 import ChatTools from './components/sections/ChatTools'
-import Header from './components/Header'
-import AskQuestion from './components/sections/AskQuestion'
 import ChatBot from './components/sections/ChatBot'
 import Automation from './components/sections/Automation'
 import Benefits from './components/sections/Benefits'
 import Statistic from './components/sections/Statistic'
 import Faq from './components/sections/Faq'
 import Cta from './components/sections/Cta'
-import Footer from './components/Footer'
 import Features from './components/sections/Features'
 import HowItWotks from './components/sections/HowItWorks'
 import Price from './components/sections/Price'
 import Partners from './components/sections/Partners'
+import Hero from './components/sections/Hero'
+import Testimonials from './components/sections/Testimonials'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import AskQuestion from './components/sections/AskQuestion'
 
 function App() {
 	return (
@@ -20,7 +24,7 @@ function App() {
 				<Header />
 
 				<main>
-					{/* <Hero /> */}
+					<Hero />
 					<Partners />
 					<HowItWotks />
 					<Features />
@@ -30,6 +34,7 @@ function App() {
 					<Automation />
 					<Benefits />
 					<Price />
+					<Testimonials />
 					<Statistic />
 					<Faq />
 					<Cta />

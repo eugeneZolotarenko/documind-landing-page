@@ -14,16 +14,17 @@ body {
 		@apply py-10 md:py-20;
 	}
 }
-
 @layer components {
 	.btn {
-		@apply flex max-w-fit items-center gap-2 rounded-md border border-transparent px-4 py-2 text-xs tracking-[-0.32px] md:text-sm;
+		@apply flex max-w-fit items-center justify-center gap-2 rounded-md border border-transparent px-4 py-2 text-center text-xs tracking-[-0.32px] shadow-xs md:text-sm;
 	}
-
+	.btn-gradient {
+		@apply -mx-px border-0 bg-gradient-to-r from-[#6366F1] to-[#A655F6] font-semibold text-white transition-all hover:bg-[length:500px_200px];
+	}
 	.btn-primary {
-		@apply bg-primary-gradient font-semibold text-white;
+		@apply bg-primary-600 font-semibold text-white hover:bg-primary-700;
 	}
 	.btn-outline {
-		@apply border border-greyscale-200 font-semibold hover:bg-greyscale-50;
+		@apply border border-greyscale-200 bg-transparent font-semibold text-greyscale-950 hover:bg-greyscale-100;
 	}
 }

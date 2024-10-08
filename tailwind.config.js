@@ -46,6 +46,8 @@ export default {
 			backgroundImage: {
 				'blue-gradient': 'linear-gradient(180deg, #D6F1FF 0%, #E7ECFD 100%)',
 				'primary-gradient': 'linear-gradient(90deg, #6366F1 0%, #A655F6 89.9%)',
+				'black-gradient':
+					'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.80) 100%)',
 			},
 			boxShadow: {
 				xs: '0px 1px 2px 0px rgba(13, 13, 18, 0.06)',
