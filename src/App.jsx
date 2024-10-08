@@ -9,6 +9,7 @@ import Faq from './components/sections/Faq'
 import Cta from './components/sections/Cta'
 import Footer from './components/Footer'
 import Features from './components/sections/Features'
+import HowItWotks from './components/sections/HowItWorks'
 
 function App() {
 	return (
@@ -18,7 +19,7 @@ function App() {
 
 				<main>
 					{/* <Hero /> */}
-					{/* <HowItWotks /> */}
+					<HowItWotks />
 					<Features />
 					<ChatTools />
 					<AskQuestion />
