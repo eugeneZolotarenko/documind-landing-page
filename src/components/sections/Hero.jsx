@@ -4,16 +4,16 @@ import { motion } from 'framer-motion'
 const Hero = () => {
 	const heroImages = {
 		lightblue: {
-			mobile: '/hero-lightblue-mob.png',
-			desktop: '/hero-lightblue.png',
+			mobile: '/hero-lightblue-mob.webp',
+			desktop: '/hero-lightblue.webp',
 		},
 		blue: {
-			mobile: '/blue-mob.png',
-			desktop: '/blue.png',
+			mobile: '/blue-mob.webp',
+			desktop: '/blue.webp',
 		},
 	}
 	return (
-		<section className="overflow-hidden py-0">
+		<section className="overflow-hidden pt-0 lg:py-[72px]">
 			<div className="container">
 				<motion.div
 					initial={{
@@ -76,7 +76,7 @@ const Hero = () => {
 					className="relative z-10 after:absolute after:bottom-[53px] after:left-[72px] after:-z-10 after:h-[224px] after:w-[1055px] after:rounded-[1055px] after:bg-[#4e46dc]/[0.08] after:blur-[125px] lg:-mt-[135px]"
 				>
 					<div className="mx-auto max-w-[650px]">
-						<h1 className="text-center text-[40px] font-semibold leading-snug tracking-[-1.2px] text-greyscale-950 lg:text-[68px]">
+						<h1 className="text-center text-[40px] font-semibold leading-[1.2] tracking-[-1.2px] text-greyscale-950 lg:text-[68px] lg:leading-[1.2]">
 							Extract insights from
 							<span className="text-primary-600"> your PDF&nbsp;data</span>
 						</h1>
@@ -104,18 +104,18 @@ const Hero = () => {
 					</div>
 					<img
 						className="absolute -bottom-4 left-[112px] hidden lg:block"
-						src="/hero-left-icon.png"
+						src="/hero-left-icon.webp"
 						alt="icon"
 					/>
 					<img
 						className="absolute -bottom-4 right-0 hidden lg:block"
-						src="/hero-right-icon.png"
+						src="/hero-right-icon.webp"
 						alt="icon"
 					/>
 				</motion.div>
 
 				<div className="mx-auto mt-6 flex max-w-fit gap-3 md:my-8">
-					<img className="w-20" src="/avatars.png" alt="avatars" />
+					<img className="w-20" src="/avatars.webp" alt="avatars" />
 					<div className="space-y-[2px]">
 						<img src="/stars.svg" alt="stars" />
 						<p className="text-xs text-greyscale-950">Loved by 63,577 users</p>

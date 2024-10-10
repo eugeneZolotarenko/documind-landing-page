@@ -8,7 +8,7 @@ const Cta = () => {
 				<div className="relative z-0 flex flex-col items-center overflow-hidden rounded-2xl bg-blue-gradient p-6 md:p-10 lg:p-20">
 					<img
 						className="absolute left-1/2 top-1/2 -z-10 hidden h-auto w-full max-w-full -translate-x-1/2 -translate-y-1/2 xl:block"
-						src="/vector.png"
+						src="/vector.webp"
 						alt="vector"
 					/>
 					<img className="lg:size-12" src="/small-logo.svg" alt="small logo" />

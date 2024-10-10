@@ -64,12 +64,12 @@ const Testimonials = () => {
 				>
 					<SwiperSlide>
 						<div className="space-y-6">
-							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-1.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
+							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-1.webp')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
 								<div className="mt-[180px] flex items-center justify-between gap-[10px] sm:mt-[220px] xl:mt-[300px]">
 									<div>
 										<div className="flex gap-[10px]">
 											<div className="size-10 overflow-hidden rounded-full">
-												<img src="/testimonial-avatar-1.png" alt="avatar" />
+												<img src="/testimonial-avatar-1.webp" alt="avatar" />
 											</div>
 											<div>
 												<p className="text-sm font-semibold text-white">
@@ -104,7 +104,7 @@ const Testimonials = () => {
 
 								<div className="mt-4 flex gap-3 lg:mt-10">
 									<div className="size-12 overflow-hidden rounded-full">
-										<img src="/testimonial-avatar-4.png" alt="avatar" />
+										<img src="/testimonial-avatar-4.webp" alt="avatar" />
 									</div>
 									<div>
 										<p className="font-semibold text-greyscale-950">
@@ -120,12 +120,12 @@ const Testimonials = () => {
 					</SwiperSlide>
 					<SwiperSlide>
 						<div className="space-y-6">
-							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-2.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
+							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-2.webp')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
 								<div className="mt-[180px] flex items-center justify-between gap-[10px] sm:mt-[220px] xl:mt-[300px]">
 									<div className="">
 										<div className="flex gap-[10px]">
 											<div className="size-10 overflow-hidden rounded-full">
-												<img src="/testimonial-avatar-2.png" alt="avatar" />
+												<img src="/testimonial-avatar-2.webp" alt="avatar" />
 											</div>
 											<div>
 												<p className="text-sm font-semibold text-white">
@@ -160,7 +160,7 @@ const Testimonials = () => {
 
 								<div className="mt-4 flex gap-3 lg:mt-10">
 									<div className="size-12 overflow-hidden rounded-full">
-										<img src="/testimonial-avatar-5.png" alt="avatar" />
+										<img src="/testimonial-avatar-5.webp" alt="avatar" />
 									</div>
 									<div>
 										<p className="font-semibold text-greyscale-950">
@@ -176,12 +176,12 @@ const Testimonials = () => {
 					</SwiperSlide>
 					<SwiperSlide>
 						<div className="space-y-6">
-							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-3.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
+							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-3.webp')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
 								<div className="mt-[180px] flex items-center justify-between gap-[10px] sm:mt-[220px] xl:mt-[300px]">
 									<div className="">
 										<div className="flex gap-[10px]">
 											<div className="size-10 overflow-hidden rounded-full">
-												<img src="/testimonial-avatar-3.png" alt="avatar" />
+												<img src="/testimonial-avatar-3.webp" alt="avatar" />
 											</div>
 											<div>
 												<p className="text-sm font-semibold text-white">
@@ -216,7 +216,7 @@ const Testimonials = () => {
 
 								<div className="mt-4 flex gap-3 lg:mt-10">
 									<div className="size-12 overflow-hidden rounded-full">
-										<img src="/testimonial-avatar-6.png" alt="avatar" />
+										<img src="/testimonial-avatar-6.webp" alt="avatar" />
 									</div>
 									<div>
 										<p className="font-semibold text-greyscale-950">
@@ -244,7 +244,7 @@ const Testimonials = () => {
 
 						<div className="mt-4 flex gap-3 lg:mt-10">
 							<div className="size-12 overflow-hidden rounded-full">
-								<img src="/testimonial-avatar-7.png" alt="avatar" />
+								<img src="/testimonial-avatar-7.webp" alt="avatar" />
 							</div>
 							<div>
 								<p className="font-semibold text-greyscale-950">Floyd Miles</p>
@@ -266,7 +266,7 @@ const Testimonials = () => {
 
 						<div className="mt-4 flex gap-3 lg:mt-10">
 							<div className="size-12 overflow-hidden rounded-full">
-								<img src="/testimonial-avatar-8.png" alt="avatar" />
+								<img src="/testimonial-avatar-8.webp" alt="avatar" />
 							</div>
 							<div>
 								<p className="font-semibold text-greyscale-950">
@@ -292,7 +292,7 @@ const Testimonials = () => {
 
 						<div className="mt-4 flex gap-3 lg:mt-10">
 							<div className="size-12 overflow-hidden rounded-full">
-								<img src="/testimonial-avatar-9.png" alt="avatar" />
+								<img src="/testimonial-avatar-9.webp" alt="avatar" />
 							</div>
 							<div>
 								<p className="font-semibold text-greyscale-950">Devon Lane</p>

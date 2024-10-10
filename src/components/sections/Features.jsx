@@ -61,7 +61,7 @@ const Features = () => {
 							</LinkButton>
 						</div>
 						<div className="mt-auto rounded-tl-2xl rounded-tr-2xl">
-							<img src={'/features-3.png'} alt="image" />
+							<img src={'/features-3.webp'} alt="image" />
 						</div>
 					</motion.div>
 
@@ -80,7 +80,7 @@ const Features = () => {
 					>
 						<div className="flex flex-col-reverse rounded-2xl bg-greyscale-10 md:flex-col">
 							<div className="rounded-tl-2xl rounded-tr-2xl">
-								<img src={'/features-1.png'} alt="image" />
+								<img src={'/features-1.webp'} alt="image" />
 							</div>
 							<div className="p-4 md:p-6 lg:p-10">
 								<h3 className="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900">
@@ -119,7 +119,7 @@ const Features = () => {
 						</div>
 						<div className="flex flex-col-reverse rounded-2xl bg-greyscale-10 md:flex-col">
 							<div className="rounded-tl-2xl rounded-tr-2xl">
-								<img src={'/features-2.png'} alt="image" />
+								<img src={'/features-2.webp'} alt="image" />
 							</div>
 							<div className="p-4 md:p-6 lg:p-10">
 								<h3 className="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900">

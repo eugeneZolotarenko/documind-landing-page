@@ -13,9 +13,8 @@ const SectionTitle = ({ children }) => {
 			}}
 			transition={{
 				duration: 0.5,
-				
 			}}
-			className="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 md:text-[56px] md:leading-tight md:tracking-[-1.68px]"
+			className="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]"
 		>
 			{children}
 		</motion.h2>

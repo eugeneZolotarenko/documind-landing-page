@@ -1,30 +1,44 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll } from 'framer-motion'
+const TABS_DATA = [
+	{
+		id: '1',
+		title: 'Bulk upload 100s of PDF documents',
+		text: 'Risus facilisis pellentesque dapibus at est nunc duis nunc. Sed scelerisque tincidunt magna',
+		imageUrl: '/tab-1-full.webp',
+	},
+	{
+		id: '2',
+		title: 'GPT4 turbo will process your documents',
+		text: 'Ask questions, extract information, and summarize everything with our advanced and friendly AI.',
+		imageUrl: '/tab-2-full.webp',
+	},
+	{
+		id: '3',
+		title: 'Ask questions and chat with documents',
+		text: 'With the AI-generated output, you can quickly extract important data, navigate through the document with smart search.',
+		imageUrl: '/tab-3-full.webp',
+	},
+]
 const Tabs = () => {
 	const [activeTab, setActiveTab] = useState(0)
-	const TABS_DATA = [
-		{
-			id: '1',
-			title: 'Bulk upload 100s of PDF documents',
-			text: 'Risus facilisis pellentesque dapibus at est nunc duis nunc. Sed scelerisque tincidunt magna',
-			imageUrl: '/tab-1-full.png',
-		},
-		{
-			id: '2',
-			title: 'GPT4 turbo will process your documents',
-			text: 'Ask questions, extract information, and summarize everything with our advanced and friendly AI.',
-			imageUrl: '/tab-2-full.png',
-		},
-		{
-			id: '3',
-			title: 'Ask questions and chat with documents',
-			text: 'With the AI-generated output, you can quickly extract important data, navigate through the document with smart search.',
-			imageUrl: '/tab-3-full.png',
-		},
-	]
+	const sectionRef = useRef(null)
+	const { scrollYProgress } = useScroll({
+		target: sectionRef,
+		offset: ['start end', 'end start'],
+	})
+
+	useEffect(() => {
+		return scrollYProgress.on('change', (progress) => {
+			const nextTab = Math.floor(progress * TABS_DATA.length)
+			if (nextTab <= 2) {
+				setActiveTab(nextTab)
+			}
+		})
+	}, [scrollYProgress])
+
 	return (
-		<div>
+		<div ref={sectionRef} className="relative">
 			<div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:gap-20">
 				<div className="flex items-center justify-center overflow-hidden rounded-2xl bg-greyscale-10">
 					<img

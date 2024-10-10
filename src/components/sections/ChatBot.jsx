@@ -53,6 +53,8 @@ const ChatBot = () => {
 
 				<div className="my-6 flex items-center justify-center rounded-tl-2xl rounded-tr-2xl md:my-10">
 					<video
+						autoPlay
+						muted
 						controls
 						className="aspect-video"
 						src="/videos/chatbot-purple.mp4"

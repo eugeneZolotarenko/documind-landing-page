@@ -41,7 +41,7 @@ const Statistic = () => {
 				>
 					<div className="group flex flex-col rounded-2xl bg-primary-600 p-4 md:p-6">
 						<div className="rounded-tl-2xl rounded-tr-2xl">
-							<img src={'statistic-1.png'} alt="image" />
+							<img src={'statistic-1.webp'} alt="image" />
 						</div>
 						<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-white md:mt-6">
 							100,000+
@@ -53,7 +53,7 @@ const Statistic = () => {
 
 					<div className="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
 						<div className="rounded-tl-2xl rounded-tr-2xl">
-							<img src={'statistic-2.png'} alt="image" />
+							<img src={'statistic-2.webp'} alt="image" />
 						</div>
 						<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
 							500,000+
@@ -65,7 +65,7 @@ const Statistic = () => {
 
 					<div className="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
 						<div className="rounded-tl-2xl rounded-tr-2xl">
-							<img src={'statistic-3.png'} alt="image" />
+							<img src={'statistic-3.webp'} alt="image" />
 						</div>
 						<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
 							1M+
@@ -77,7 +77,7 @@ const Statistic = () => {
 
 					<div className="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
 						<div className="rounded-tl-2xl rounded-tr-2xl">
-							<img src={'statistic-3.png'} alt="image" />
+							<img src={'statistic-3.webp'} alt="image" />
 						</div>
 						<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
 							500%+

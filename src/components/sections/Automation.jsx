@@ -4,12 +4,12 @@ import SectionSubtitle from '../SectionSubtitle'
 import { motion } from 'framer-motion'
 const AUTOMATION_DATA = [
 	{
-		imageUrl: '/ai-1.png',
+		imageUrl: '/ai-1.webp',
 		title: 'Manual work 😒',
 		text: 'Managing PDFs manually involves repetitive and time-consuming tasks such as opening each document, reading through pages, extracting information, and organizing data yourself.',
 	},
 	{
-		imageUrl: '/ai-2.png',
+		imageUrl: '/ai-2.webp',
 		title: 'Documind chat 😀',
 		text: 'Automatically process documents, extracting key information, summarizing content, and organizing data in a fractionof the time. ',
 	},

@@ -5,22 +5,22 @@ import { motion } from 'framer-motion'
 
 const CHAT_TOOLS_DATA = [
 	{
-		imageUrl: '/pdf-1.png',
+		imageUrl: '/pdf-1.webp',
 		title: 'textbooks.pdf',
 		text: 'Chat with pdf textbooks and engage in interactive conversation with your textbokksor a novel.',
 	},
 	{
-		imageUrl: '/pdf-2.png',
+		imageUrl: '/pdf-2.webp',
 		title: 'research_papers.pdf',
 		text: 'Ask questions about complex topics with a simple chat interface for researchpapers. Take your research game to the next level.',
 	},
 	{
-		imageUrl: '/pdf-3.png',
+		imageUrl: '/pdf-3.webp',
 		title: 'legal_agreement.pdf',
 		text: 'With Documind, legal documents becomes easier to understand and easier tosearch for contracts or key terms.',
 	},
 	{
-		imageUrl: '/pdf-4.png',
+		imageUrl: '/pdf-4.webp',
 		title: 'customer_support.pdf',
 		text: 'Upload mutiple customer support manuals, guides & FAQ documents and askfor any information.',
 	},
@@ -50,7 +50,7 @@ const ChatTools = () => {
 							key={item.imageUrl}
 							className="flex flex-col"
 						>
-							<div className="rounded-tl-2xl rounded-tr-2xl bg-greyscale-10 pt-3 md:pt-6">
+							<div className="flex max-h-[300px] justify-end rounded-tl-2xl rounded-tr-2xl bg-greyscale-10">
 								<img src={item.imageUrl} alt="image" />
 							</div>
 							<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
