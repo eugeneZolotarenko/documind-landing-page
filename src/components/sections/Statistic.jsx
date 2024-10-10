@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle'
 import SectionSubtitle from '../SectionSubtitle'
-
+import { motion } from 'framer-motion'
 const Statistic = () => {
 	return (
 		<section>
@@ -9,9 +9,36 @@ const Statistic = () => {
 				<div className="flex flex-col items-center gap-4 text-center">
 					<SectionSubtitle>We In Numbers</SectionSubtitle>
 					<SectionTitle>We help ambitious professionals succeed</SectionTitle>
-					<p>Our results speak for themselves.</p>
+					<motion.p
+						viewport={{ once: true, margin: '-100px' }}
+						initial={{
+							opacity: 0,
+							y: 50,
+						}}
+						whileInView={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{
+							duration: 0.5,
+						}}
+					>
+						Our results speak for themselves.
+					</motion.p>
 				</div>
-				<div className="mx-auto mt-6 grid max-w-[1040px] grid-cols-2 gap-3 md:grid-cols-4 md:gap-10">
+				<motion.div
+					viewport={{ once: true, margin: '-300px' }}
+					initial={{
+						opacity: 0,
+					}}
+					whileInView={{
+						opacity: 1,
+					}}
+					transition={{
+						duration: 0.3,
+					}}
+					className="mx-auto mt-6 grid max-w-[1040px] grid-cols-2 gap-3 md:grid-cols-4 md:gap-10"
+				>
 					<div className="group flex flex-col rounded-2xl bg-primary-600 p-4 md:p-6">
 						<div className="rounded-tl-2xl rounded-tr-2xl">
 							<img src={'statistic-1.png'} alt="image" />
@@ -59,7 +86,7 @@ const Statistic = () => {
 							Return on investment
 						</p>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	)

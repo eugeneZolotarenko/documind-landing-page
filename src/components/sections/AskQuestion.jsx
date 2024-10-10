@@ -1,7 +1,8 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle'
 import FeatureBlock from '../FeatureBlock'
-import Button from '../Button'
+import LinkButton from '../LinkButton'
+import { motion } from 'framer-motion'
 
 const FEATURES_DATA = [
 	{
@@ -24,18 +25,32 @@ const AskQuestion = () => {
 			<div className="container">
 				<div className="grid grid-cols-1 gap-2 md:grid-cols-2">
 					<SectionTitle>Ask questions</SectionTitle>
-					<div className="space-y-4 md:space-y-6">
+
+					<motion.div
+						initial={{
+							y: 50,
+						}}
+						whileInView={{
+							y: 0,
+						}}
+						transition={{
+							duration: 0.5,
+						}}
+						viewport={{ once: true, margin: '-100px' }}
+						className="space-y-4 md:space-y-6"
+					>
 						<p>
 							Have conversation with PDFs to get answers in natural language,
 							along with citations and the source PDF.
 						</p>
-						<a href="/" className="inline-block">
-							<Button type="gradient">Start Now</Button>
-						</a>
-					</div>
+
+						<LinkButton href={'/'} type="gradient">
+							Start Now
+						</LinkButton>
+					</motion.div>
 				</div>
 
-				<div className="my-4 flex items-center justify-center rounded-tl-2xl rounded-tr-2xl bg-greyscale-10 p-3 md:my-10 md:p-10 xl:p-20">
+				<div className="my-6 flex items-center justify-center rounded-tl-2xl rounded-tr-2xl md:my-10">
 					<video
 						controls
 						className="aspect-video"
@@ -44,7 +59,7 @@ const AskQuestion = () => {
 				</div>
 
 				{/* Feature blocks */}
-				<div className="grid gap-3 md:gap-6 lg:grid-cols-3">
+				<div className="grid gap-4 md:gap-6 lg:grid-cols-3">
 					{FEATURES_DATA.map((feature, idx) => (
 						<FeatureBlock key={idx} feature={feature} />
 					))}

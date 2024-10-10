@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle'
 import SectionSubtitle from '../SectionSubtitle'
+import { motion } from 'framer-motion'
 
 const CHAT_TOOLS_DATA = [
 	{
@@ -33,9 +34,22 @@ const ChatTools = () => {
 					<SectionSubtitle>Chat Tools</SectionSubtitle>
 					<SectionTitle>Built for any PDF</SectionTitle>
 				</div>
-				<div className="mt-6 grid gap-3 md:grid-cols-2 md:gap-6">
+				<div className="mt-6 grid gap-6 md:grid-cols-2">
 					{CHAT_TOOLS_DATA.map((item) => (
-						<div key={item.imageUrl} className="flex flex-col">
+						<motion.div
+							viewport={{ once: true, margin: '-300px' }}
+							initial={{
+								opacity: 0,
+							}}
+							whileInView={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.6,
+							}}
+							key={item.imageUrl}
+							className="flex flex-col"
+						>
 							<div className="rounded-tl-2xl rounded-tr-2xl bg-greyscale-10 pt-3 md:pt-6">
 								<img src={item.imageUrl} alt="image" />
 							</div>
@@ -43,7 +57,7 @@ const ChatTools = () => {
 								{item.title}
 							</h3>
 							<p className="mt-2">{item.text}</p>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			</div>

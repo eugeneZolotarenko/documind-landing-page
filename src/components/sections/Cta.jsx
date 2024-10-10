@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../Button'
+import LinkButton from '../LinkButton'
 
 const Cta = () => {
 	return (
@@ -15,9 +15,10 @@ const Cta = () => {
 					<h4 className="mb-4 mt-3 max-w-[560px] text-balance text-center text-[32px] font-semibold tracking-[-0.96px] text-greyscale-950 lg:mb-10 lg:mt-4 lg:text-[56px] lg:leading-tight">
 						Unlock your potential with Documind AI
 					</h4>
-					<a download href="/">
-						<Button type="gradient">Upload Your PDF</Button>
-					</a>
+
+					<LinkButton href={'/'} download type="gradient">
+						Upload Your PDF
+					</LinkButton>
 				</div>
 			</div>
 		</section>

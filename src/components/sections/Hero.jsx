@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../Button'
-
+import LinkButton from '../LinkButton'
+import { motion } from 'framer-motion'
 const Hero = () => {
 	const heroImages = {
 		lightblue: {
@@ -13,29 +13,68 @@ const Hero = () => {
 		},
 	}
 	return (
-		<section className="py-0">
+		<section className="overflow-hidden py-0">
 			<div className="container">
-				{/* LightBlue */}
-				{/* <picture className="-z-10">
-					<source
-						media="(max-width: 768px)"
-						srcSet={heroImages.lightblue.mobile}
-					/>
-					<source
-						media="(min-width: 769px)"
-						srcSet={heroImages.lightblue.desktop}
-					/>
-					<img src={heroImages.lightblue.desktop} alt="hero image" />
-				</picture> */}
+				<motion.div
+					initial={{
+						opacity: 0,
+						scale: 0.95,
+					}}
+					whileInView={{
+						opacity: 1,
+						scale: 1,
+					}}
+					transition={{
+						duration: 0.5,
+					}}
+					viewport={{ once: true }}
+				>
+					{/* LightBlue */}
+					{/* <div className="relative w-full after:absolute after:left-0 after:top-[144px] after:-z-0 after:h-[258px] after:w-full after:bg-[linear-gradient(180deg,rgba(255,255,255,0.00)_0%,#FFF_100%)]">
+					<picture className="-z-10">
+						<source
+							media="(max-width: 768px)"
+							srcSet={heroImages.lightblue.mobile}
+						/>
+						<source
+							media="(min-width: 769px)"
+							srcSet={heroImages.lightblue.desktop}
+						/>
+						<img src={heroImages.lightblue.desktop} alt="hero image" />
+					</picture>
+				</div> */}
 
-				{/* Blue */}
-				<picture className="-z-10 flex justify-center lg:mb-20">
-					<source media="(max-width: 768px)" srcSet={heroImages.blue.mobile} />
-					<source media="(min-width: 769px)" srcSet={heroImages.blue.desktop} />
-					<img src={heroImages.blue.desktop} alt="hero image" />
-				</picture>
+					{/* Blue */}
+					<div className="relative w-full after:absolute after:left-0 after:top-[144px] after:-z-0 after:h-[258px] after:w-full after:bg-[linear-gradient(180deg,rgba(255,255,255,0.00)_0%,#FFF_100%)]">
+						<picture className="-z-10 flex justify-center lg:mb-20">
+							<source
+								media="(max-width: 768px)"
+								srcSet={heroImages.blue.mobile}
+							/>
+							<source
+								media="(min-width: 769px)"
+								srcSet={heroImages.blue.desktop}
+							/>
+							<img src={heroImages.blue.desktop} alt="hero image" />
+						</picture>
+					</div>
+				</motion.div>
 
-				<div className="relative after:absolute after:left-1/2 after:top-1/2 after:-z-10 after:h-full after:w-full after:-translate-x-1/2 after:-translate-y-1/2 after:bg-[#4e46dc]/[0.08] after:blur-[125px] lg:-mt-[135px]">
+				<motion.div
+					initial={{
+						opacity: 0,
+						y: 50,
+					}}
+					whileInView={{
+						opacity: 1,
+						y: 0,
+					}}
+					viewport={{ once: true }}
+					transition={{
+						duration: 0.5,
+					}}
+					className="relative z-10 after:absolute after:bottom-[53px] after:left-[72px] after:-z-10 after:h-[224px] after:w-[1055px] after:rounded-[1055px] after:bg-[#4e46dc]/[0.08] after:blur-[125px] lg:-mt-[135px]"
+				>
 					<div className="mx-auto max-w-[650px]">
 						<h1 className="text-center text-[40px] font-semibold leading-snug tracking-[-1.2px] text-greyscale-950 lg:text-[68px]">
 							Extract insights from
@@ -46,25 +85,23 @@ const Hero = () => {
 							answer questions from vast amount of PDF data
 						</p>
 						<div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-							<a href="/">
-								<Button
-									type="gradient"
-									className="w-full max-w-full sm:max-w-fit"
-								>
-									<span className="flex shrink-0">Get Started - Free</span>
-								</Button>
-							</a>
-							<a href="/">
-								<Button
-									type="outline"
-									className="w-full max-w-full sm:max-w-fit"
-								>
-									<span className="flex shrink-0">Upload Your PDF</span>
-								</Button>
-							</a>
+							<LinkButton
+								href={'/'}
+								type="gradient"
+								className="w-full max-w-full py-3 sm:max-w-fit"
+							>
+								<span className="flex shrink-0">Get Started - Free</span>
+							</LinkButton>
+
+							<LinkButton
+								href={'/'}
+								type="outline"
+								className="w-full max-w-full py-3 sm:max-w-fit"
+							>
+								<span className="flex shrink-0">Upload Your PDF</span>
+							</LinkButton>
 						</div>
 					</div>
-
 					<img
 						className="absolute -bottom-4 left-[112px] hidden lg:block"
 						src="/hero-left-icon.png"
@@ -75,7 +112,7 @@ const Hero = () => {
 						src="/hero-right-icon.png"
 						alt="icon"
 					/>
-				</div>
+				</motion.div>
 
 				<div className="mx-auto mt-6 flex max-w-fit gap-3 md:my-8">
 					<img className="w-20" src="/avatars.png" alt="avatars" />

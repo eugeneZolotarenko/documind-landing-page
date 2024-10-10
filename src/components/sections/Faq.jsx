@@ -62,11 +62,11 @@ const Faq = () => {
 					{FAQ_DATA.map((faq, idx) => (
 						<div
 							key={idx}
-							className={`flex h-full flex-col rounded-xl bg-greyscale-50 p-4 md:p-6`}
+							className={`flex h-full flex-col rounded-xl bg-greyscale-50`}
 						>
 							<button
 								onClick={() => toggleFAQ(idx)}
-								className={`text-grey-60 flex items-center justify-between text-xl font-semibold sm:text-left sm:text-base`}
+								className={`text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6`}
 							>
 								<span className="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
 									{faq.question}
@@ -81,7 +81,7 @@ const Faq = () => {
 							</button>
 
 							<div
-								className={`grid overflow-hidden transition-all ${openIndexes.includes(idx) ? 'grid-rows-[1fr] pt-2 opacity-100' : 'grid-rows-[0fr] opacity-0'} `}
+								className={`grid overflow-hidden transition-all ${openIndexes.includes(idx) ? 'grid-rows-[1fr] pb-4 pl-4 opacity-100 md:pb-6 md:pl-6' : 'grid-rows-[0fr] opacity-0'} `}
 							>
 								<p className="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
 									{faq.answer}

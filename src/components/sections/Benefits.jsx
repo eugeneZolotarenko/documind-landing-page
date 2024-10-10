@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle'
 import SectionSubtitle from '../SectionSubtitle'
-
+import { motion } from 'framer-motion'
 const BENEFITS_DATA = [
 	{
 		imageUrl: '/benefits-1.svg',
@@ -32,16 +32,39 @@ const Benefits = () => {
 				<div className="flex flex-col items-center gap-4 text-center">
 					<SectionSubtitle>Benefits</SectionSubtitle>
 					<SectionTitle>We respect your Data & Security</SectionTitle>
-					<p>
+					<motion.p
+						viewport={{ once: true, margin: '-100px' }}
+						initial={{
+							opacity: 0,
+							y: 50,
+						}}
+						whileInView={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{
+							duration: 0.5,
+						}}
+					>
 						We follow industry standards while constantly investing in privacy
 						of our users.
-					</p>
+					</motion.p>
 				</div>
-				<div className="mt-6 grid gap-3 md:grid-cols-2 md:gap-x-6 md:gap-y-10">
+				<div className="mt-6 grid gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-10">
 					{BENEFITS_DATA.map((item) => (
-						<div
+						<motion.div
+							viewport={{ once: true, margin: '-300px' }}
+							initial={{
+								opacity: 0,
+							}}
+							whileInView={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.3,
+							}}
 							key={item.imageUrl}
-							className="bg-greyscale-10 flex flex-col rounded-2xl p-4 md:p-6 lg:p-10"
+							className="flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6 lg:p-10"
 						>
 							<div className="rounded-tl-2xl rounded-tr-2xl">
 								<img src={item.imageUrl} alt="image" />
@@ -50,7 +73,7 @@ const Benefits = () => {
 								{item.title}
 							</h3>
 							<p className="mt-2 text-balance">{item.text}</p>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			</div>

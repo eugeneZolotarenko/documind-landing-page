@@ -2,6 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
+import { motion } from 'framer-motion'
 
 const Testimonials = () => {
 	return (
@@ -10,13 +11,38 @@ const Testimonials = () => {
 				<div className="flex flex-col items-center gap-4">
 					<SectionSubtitle>Testimonial</SectionSubtitle>
 					<SectionTitle>Don't Just Take Our Word for it!</SectionTitle>
-					<p>
+					<motion.p
+						viewport={{ once: true, margin: '-100px' }}
+						initial={{
+							opacity: 0,
+							y: 50,
+						}}
+						whileInView={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{
+							duration: 0.5,
+						}}
+					>
 						Tens of thousands of students and professionals benefit from
 						Documind everyday.
-					</p>
+					</motion.p>
 				</div>
 			</div>
-			<div className="mt-10 sm:container">
+			<motion.div
+				viewport={{ once: true, margin: '-300px' }}
+				initial={{
+					opacity: 0,
+				}}
+				whileInView={{
+					opacity: 1,
+				}}
+				transition={{
+					duration: 0.3,
+				}}
+				className="mt-10 sm:container"
+			>
 				<Swiper
 					breakpoints={{
 						320: {
@@ -38,7 +64,7 @@ const Testimonials = () => {
 				>
 					<SwiperSlide>
 						<div className="space-y-6">
-							<div className="after:bg-black-gradient relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-1.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full">
+							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-1.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
 								<div className="mt-[180px] flex items-center justify-between gap-[10px] sm:mt-[220px] xl:mt-[300px]">
 									<div>
 										<div className="flex gap-[10px]">
@@ -94,7 +120,7 @@ const Testimonials = () => {
 					</SwiperSlide>
 					<SwiperSlide>
 						<div className="space-y-6">
-							<div className="after:bg-black-gradient relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-2.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full">
+							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-2.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
 								<div className="mt-[180px] flex items-center justify-between gap-[10px] sm:mt-[220px] xl:mt-[300px]">
 									<div className="">
 										<div className="flex gap-[10px]">
@@ -150,7 +176,7 @@ const Testimonials = () => {
 					</SwiperSlide>
 					<SwiperSlide>
 						<div className="space-y-6">
-							<div className="after:bg-black-gradient relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-3.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full">
+							<div className="relative z-0 overflow-hidden rounded-3xl bg-[url('/slide-big-3.png')] bg-cover bg-center bg-no-repeat p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-black-gradient">
 								<div className="mt-[180px] flex items-center justify-between gap-[10px] sm:mt-[220px] xl:mt-[300px]">
 									<div className="">
 										<div className="flex gap-[10px]">
@@ -275,7 +301,7 @@ const Testimonials = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	)
 }

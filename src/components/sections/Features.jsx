@@ -1,8 +1,8 @@
 import React from 'react'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
-import Button from '../Button'
-
+import LinkButton from '../LinkButton'
+import { motion } from 'framer-motion'
 const Features = () => {
 	return (
 		<section>
@@ -13,7 +13,19 @@ const Features = () => {
 				</div>
 
 				<div className="mt-6 md:mt-10">
-					<div className="grid rounded-2xl bg-greyscale-10 md:grid-cols-2">
+					<motion.div
+						viewport={{ once: true, margin: '-300px' }}
+						initial={{
+							opacity: 0,
+						}}
+						whileInView={{
+							opacity: 1,
+						}}
+						transition={{
+							duration: 0.6,
+						}}
+						className="grid rounded-2xl bg-greyscale-10 md:grid-cols-2"
+					>
 						<div className="p-4 md:p-6 lg:p-10">
 							<h3 className="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900">
 								Ask Questions
@@ -43,19 +55,29 @@ const Features = () => {
 								</li>
 							</ul>
 
-							<a href="/">
-								<Button type="gradient">
-									<span>Get Started</span>
-									<img src="/btn-arrow.svg" alt="arrow-icon" />
-								</Button>
-							</a>
+							<LinkButton href={'/'} type="gradient">
+								<span>Get Started</span>
+								<img src="/btn-arrow.svg" alt="arrow-icon" />
+							</LinkButton>
 						</div>
 						<div className="mt-auto rounded-tl-2xl rounded-tr-2xl">
 							<img src={'/features-3.png'} alt="image" />
 						</div>
-					</div>
+					</motion.div>
 
-					<div className="mt-3 grid gap-3 md:mt-6 md:grid-cols-2 md:gap-6">
+					<motion.div
+						viewport={{ once: true, margin: '-300px' }}
+						initial={{
+							opacity: 0,
+						}}
+						whileInView={{
+							opacity: 1,
+						}}
+						transition={{
+							duration: 0.6,
+						}}
+						className="mt-6 grid gap-6 md:grid-cols-2"
+					>
 						<div className="flex flex-col-reverse rounded-2xl bg-greyscale-10 md:flex-col">
 							<div className="rounded-tl-2xl rounded-tr-2xl">
 								<img src={'/features-1.png'} alt="image" />
@@ -89,13 +111,10 @@ const Features = () => {
 										</p>
 									</li>
 								</ul>
-
-								<a href="/">
-									<Button type="gradient">
-										<span>Get Started</span>
-										<img src="/btn-arrow.svg" alt="arrow-icon" />
-									</Button>
-								</a>
+								<LinkButton href={'/'} type="gradient">
+									<span>Get Started</span>
+									<img src="/btn-arrow.svg" alt="arrow-icon" />
+								</LinkButton>
 							</div>
 						</div>
 						<div className="flex flex-col-reverse rounded-2xl bg-greyscale-10 md:flex-col">
@@ -133,15 +152,13 @@ const Features = () => {
 									</li>
 								</ul>
 
-								<a href="/">
-									<Button type="gradient">
-										<span>Get Started</span>
-										<img src="/btn-arrow.svg" alt="arrow-icon" />
-									</Button>
-								</a>
+								<LinkButton href={'/'} type="gradient">
+									<span>Get Started</span>
+									<img src="/btn-arrow.svg" alt="arrow-icon" />
+								</LinkButton>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

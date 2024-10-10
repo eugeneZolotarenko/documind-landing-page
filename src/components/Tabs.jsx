@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const Tabs = () => {
-	// Define state to track the active tab
 	const [activeTab, setActiveTab] = useState(0)
-
-	// Define content for each tab
 	const TABS_DATA = [
 		{
 			id: '1',
@@ -27,7 +25,6 @@ const Tabs = () => {
 	]
 	return (
 		<div>
-			{/* Контент активного таба */}
 			<div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:gap-20">
 				<div className="flex items-center justify-center overflow-hidden rounded-2xl bg-greyscale-10">
 					<img
@@ -39,7 +36,20 @@ const Tabs = () => {
 
 				<ul>
 					{TABS_DATA.map((tab, idx) => (
-						<li
+						<motion.li
+							initial={{
+								y: 50,
+								opacity: 0,
+							}}
+							whileInView={{
+								y: 0,
+								opacity: 1,
+							}}
+							transition={{
+								delayChildren: 1,
+								staggerChildren: 2,
+							}}
+							viewport={{ once: true, margin: '-50px' }}
 							key={tab.id}
 							className="group relative z-10 overflow-hidden pb-4 last:pb-0 lg:pb-14"
 						>
@@ -64,7 +74,7 @@ const Tabs = () => {
 									<p className="text-[#5D5D5D]">{tab.text}</p>
 								</div>
 							</button>
-						</li>
+						</motion.li>
 					))}
 				</ul>
 			</div>

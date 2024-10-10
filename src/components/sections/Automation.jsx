@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle'
 import SectionSubtitle from '../SectionSubtitle'
-
+import { motion } from 'framer-motion'
 const AUTOMATION_DATA = [
 	{
 		imageUrl: '/ai-1.png',
@@ -22,21 +22,47 @@ const Automation = () => {
 				<div className="flex flex-col items-center gap-4 text-center">
 					<SectionSubtitle>AI Automation</SectionSubtitle>
 					<SectionTitle>Work 10x Faster with AI</SectionTitle>
-					<p>
+					<motion.p
+						viewport={{ once: true, margin: '-100px' }}
+						initial={{
+							opacity: 0,
+							y: 50,
+						}}
+						whileInView={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{
+							duration: 0.5,
+						}}
+					>
 						Busy students & professionals are saving 4.6 hours a week with AI
-					</p>
+					</motion.p>
 				</div>
-				<div className="mt-6 grid gap-3 md:grid-cols-2 md:gap-6">
+				<div className="mt-6 grid gap-6 md:grid-cols-2">
 					{AUTOMATION_DATA.map((item) => (
-						<div key={item.imageUrl} className="flex flex-col">
-							<div className="bg-greyscale-10 rounded-tl-2xl rounded-tr-2xl">
+						<motion.div
+							viewport={{ once: true, margin: '-300px' }}
+							initial={{
+								opacity: 0,
+							}}
+							whileInView={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.3,
+							}}
+							key={item.imageUrl}
+							className="flex flex-col"
+						>
+							<div className="rounded-tl-2xl rounded-tr-2xl bg-greyscale-10">
 								<img src={item.imageUrl} alt="image" />
 							</div>
 							<h3 className="mt-3 text-center text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
 								{item.title}
 							</h3>
 							<p className="mt-2 text-balance text-center">{item.text}</p>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			</div>

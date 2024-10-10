@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
-import Button from '../Button'
-
+import LinkButton from '../LinkButton'
+import { motion } from 'framer-motion'
 const pricingData = {
 	premium: {
 		label: 'Premium',
@@ -35,14 +35,37 @@ const Price = () => {
 				<div className="mx-auto flex max-w-[600px] flex-col items-center gap-4 text-center">
 					<SectionSubtitle>Pricing</SectionSubtitle>
 					<SectionTitle>Stop working so hard, put AI to work!</SectionTitle>
-					<p>
+					<motion.p
+						viewport={{ once: true, margin: '-100px' }}
+						initial={{
+							opacity: 0,
+							y: 50,
+						}}
+						whileInView={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{
+							duration: 0.5,
+						}}
+					>
 						AI is something we all can benefit from, and our mission at Documind
 						is to help you make your work quicker and easier.
-					</p>
+					</motion.p>
 				</div>
 
 				{/* Toggle Switch */}
-				<button
+				<motion.button
+					viewport={{ once: true, margin: '-300px' }}
+					initial={{
+						opacity: 0,
+					}}
+					whileInView={{
+						opacity: 1,
+					}}
+					transition={{
+						duration: 0.3,
+					}}
 					onClick={() => setIsYearly(!isYearly)}
 					className="relative mx-auto my-6 grid w-full grid-cols-2 items-center justify-center rounded-2xl bg-greyscale-50 p-1 xs:gap-2 sm:max-w-[286px] lg:my-11"
 				>
@@ -59,10 +82,22 @@ const Price = () => {
 							30% off
 						</span>
 					</p>
-				</button>
+				</motion.button>
 
 				{/* Pricing Table */}
-				<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+				<motion.div
+					viewport={{ once: true, margin: '-300px' }}
+					initial={{
+						opacity: 0,
+					}}
+					whileInView={{
+						opacity: 1,
+					}}
+					transition={{
+						duration: 0.3,
+					}}
+					className="grid gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3"
+				>
 					{/* Premium */}
 					<div className="rounded-2xl border border-greyscale-100 p-4 md:p-6">
 						<h3 className="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
@@ -89,14 +124,14 @@ const Price = () => {
 									: pricingData.premium.yearlyOldPrice}
 							</p>
 						</div>
-						<a href="/" className="flex w-full max-w-full justify-center">
-							<Button
-								type="outline"
-								className={'flex w-full max-w-full justify-center'}
-							>
-								Upgrade Now
-							</Button>
-						</a>
+
+						<LinkButton
+							href={'/'}
+							type="outline"
+							className={'flex w-full max-w-full justify-center'}
+						>
+							Upgrade Now
+						</LinkButton>
 
 						<p className="mt-4 text-sm">Included:</p>
 						<ul className="mt-3 space-y-2 md:mt-4">
@@ -217,14 +252,14 @@ const Price = () => {
 									: pricingData.professional.yearlyOldPrice}
 							</p>
 						</div>
-						<a href="/" className="flex w-full max-w-full justify-center">
-							<Button
-								type="gradient"
-								className={'flex w-full max-w-full justify-center'}
-							>
-								Upgrade Now
-							</Button>
-						</a>
+						{/* <a href="/" className="flex w-full max-w-full justify-center"> */}
+						<LinkButton
+							href={'/'}
+							type="gradient"
+							className={'flex w-full max-w-full justify-center'}
+						>
+							Upgrade Now
+						</LinkButton>
 
 						<p className="mt-4 text-sm">Everything in Premium plus:</p>
 						<ul className="mt-3 space-y-2 md:mt-4">
@@ -341,14 +376,14 @@ const Price = () => {
 							</p>
 						</div>
 
-						<a href="/" className="flex w-full max-w-full justify-center">
-							<Button
-								type="outline"
-								className={'flex w-full max-w-full justify-center'}
-							>
-								Upgrade Now
-							</Button>
-						</a>
+						{/* <a href="/" className="flex w-full max-w-full justify-center"> */}
+						<LinkButton
+							href={'/'}
+							type="outline"
+							className={'flex w-full max-w-full justify-center'}
+						>
+							Upgrade Now
+						</LinkButton>
 
 						<p className="mt-4 text-sm">Included:</p>
 						<ul className="mt-3 space-y-2 md:mt-4">
@@ -444,7 +479,7 @@ const Price = () => {
 							</li>
 						</ul>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	)

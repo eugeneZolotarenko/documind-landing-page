@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 
-const Button = ({ type = 'primary', children, onClick, className }) => {
+const LinkButton = ({ type = 'primary', children, className, href }) => {
 	const buttonClass = {
 		primary: 'btn btn-primary',
 		outline: 'btn btn-outline',
@@ -9,10 +9,10 @@ const Button = ({ type = 'primary', children, onClick, className }) => {
 	}[type]
 
 	return (
-		<button className={clsx(buttonClass, className)} onClick={onClick}>
+		<a href={href} className={clsx(buttonClass, className)}>
 			{children}
-		</button>
+		</a>
 	)
 }
 
-export default Button
+export default LinkButton

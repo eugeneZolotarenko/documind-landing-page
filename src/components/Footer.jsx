@@ -76,7 +76,7 @@ const Footer = () => {
 				</div>
 				<hr className="h-px w-full border border-greyscale-200" />
 
-				<div className="flex flex-col gap-2 pb-12 pt-6 text-center md:flex-row md:justify-between md:py-14 md:pb-20">
+				<div className="flex flex-col gap-2 py-6 text-center md:flex-row md:justify-between md:py-14">
 					<p className="text-sm font-medium">
 						© 2024 Documind™. All Rights Reserved.
 					</p>
