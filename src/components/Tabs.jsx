@@ -74,7 +74,7 @@ const Tabs = () => {
 							/>
 							<button
 								className={`flex gap-3 text-left`}
-								onClick={() => setActiveTab(idx)}
+								// onClick={() => setActiveTab(idx)}
 							>
 								<span
 									className={`flex size-8 shrink-0 items-center justify-center rounded-full border border-greyscale-200 bg-white text-center font-semibold text-greyscale-950 ${activeTab === idx && 'border-primary-600 !bg-primary-600 text-white'}`}
