@@ -50,8 +50,12 @@ const ChatTools = () => {
 							key={item.imageUrl}
 							className="flex flex-col"
 						>
-							<div className="flex max-h-[300px] justify-end rounded-tl-2xl rounded-tr-2xl bg-greyscale-10">
-								<img src={item.imageUrl} alt="image" />
+							<div className="flex max-h-[300px] items-center justify-end rounded-2xl bg-greyscale-10">
+								<img
+									className="w-full max-w-full"
+									src={item.imageUrl}
+									alt="image"
+								/>
 							</div>
 							<h3 className="mt-3 text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
 								{item.title}

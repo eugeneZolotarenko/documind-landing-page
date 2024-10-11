@@ -55,7 +55,7 @@ const Automation = () => {
 							key={item.imageUrl}
 							className="flex flex-col"
 						>
-							<div className="rounded-tl-2xl rounded-tr-2xl bg-greyscale-10">
+							<div className="rounded-2xl bg-greyscale-10">
 								<img src={item.imageUrl} alt="image" />
 							</div>
 							<h3 className="mt-3 text-center text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
