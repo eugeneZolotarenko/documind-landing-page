@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import LinkButton from '../LinkButton'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
-import LinkButton from '../LinkButton'
-import { motion, useScroll } from 'framer-motion'
 
 const TABS_DATA = [
 	{
@@ -24,7 +24,7 @@ const TABS_DATA = [
 		imageUrl: '/tab-3-full.webp',
 	},
 ]
-const HowItWotks = () => {
+const HowItWorks = () => {
 	const [activeTab, setActiveTab] = useState(0)
 	const sectionRef = useRef(null)
 	const { scrollYProgress } = useScroll({
@@ -32,32 +32,30 @@ const HowItWotks = () => {
 		offset: ['start start', 'end end'],
 	})
 
+	const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.05])
+	const imageOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 1])
+
 	useEffect(() => {
-		return scrollYProgress.on('change', (progress) => {
+		const unsubscribe = scrollYProgress.on('change', (progress) => {
 			const nextTab = Math.floor(progress * TABS_DATA.length)
-			if (nextTab <= 2) {
+			if (nextTab >= 0 && nextTab < TABS_DATA.length) {
 				setActiveTab(nextTab)
 			}
 		})
+		return () => unsubscribe()
 	}, [scrollYProgress])
 	return (
-		<section ref={sectionRef} className="realtive min-h-[160vh]">
+		<section ref={sectionRef} className="relative min-h-[160vh]">
 			<div className="container sticky top-20">
-				<SectionSubtitle>How It Works </SectionSubtitle>
+				<SectionSubtitle>How It Works</SectionSubtitle>
 				<div className="mt-3 grid grid-cols-1 gap-2 md:mt-4 md:grid-cols-2 lg:gap-10">
 					<div>
 						<SectionTitle>Easy step transforming your documents</SectionTitle>
 					</div>
 					<motion.div
-						initial={{
-							y: 50,
-						}}
-						whileInView={{
-							y: 0,
-						}}
-						transition={{
-							duration: 0.5,
-						}}
+						initial={{ y: 50, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1 }}
+						transition={{ duration: 0.5 }}
 						viewport={{ once: true, margin: '-100px' }}
 						className="space-y-4 md:space-y-6"
 					>
@@ -74,55 +72,83 @@ const HowItWotks = () => {
 
 				<div className="mt-6 md:mt-10 lg:mt-20">
 					<div className="relative">
-						<div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:gap-20">
-							<div className="flex items-center justify-center overflow-hidden rounded-2xl bg-greyscale-10">
-								<img
+						<div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-6 lg:gap-20">
+							<motion.div
+								style={{ scale: imageScale, opacity: imageOpacity }}
+								className="flex w-full items-center justify-center overflow-hidden rounded-2xl bg-greyscale-10 md:w-1/2"
+							>
+								<motion.img
+									key={TABS_DATA[activeTab].imageUrl}
+									initial={{ opacity: 0, scale: 0.8 }}
+									animate={{ opacity: 1, scale: 1 }}
+									exit={{ opacity: 0, scale: 0.8 }}
+									transition={{ duration: 0.5 }}
 									className="h-auto w-full max-w-full"
 									src={TABS_DATA[activeTab].imageUrl}
 									alt={`Image for ${TABS_DATA[activeTab].title}`}
 								/>
-							</div>
+							</motion.div>
 
-							<ul>
+							<ul className="w-full space-y-10 md:w-1/2">
 								{TABS_DATA.map((tab, idx) => (
 									<motion.li
-										initial={{
-											y: 50,
-											opacity: 0,
-										}}
-										whileInView={{
-											y: 0,
-											opacity: 1,
-										}}
-										transition={{
-											delayChildren: 1,
-											staggerChildren: 2,
-										}}
-										viewport={{ once: true, margin: '-50px' }}
 										key={tab.id}
-										className="group relative z-10 overflow-hidden pb-4 last:pb-0 lg:pb-14"
+										initial={{ opacity: 0, x: 50 }}
+										animate={{
+											opacity: activeTab >= idx ? 1 : 0.5,
+											x: 0,
+										}}
+										transition={{ duration: 0.5, delay: idx * 0.1 }}
+										className="group relative z-10 overflow-visible"
 									>
-										<img
-											src="/dotter-line.svg"
-											alt="dotted line"
-											className="absolute left-4 top-10 -z-10 h-auto group-last:hidden"
-										/>
-										<button
+										<motion.div
 											className={`flex gap-3 text-left`}
-											// onClick={() => setActiveTab(idx)}
+											animate={{
+												scale: activeTab === idx ? 1.05 : 1,
+											}}
+											transition={{ duration: 0.3 }}
 										>
-											<span
-												className={`flex size-8 shrink-0 items-center justify-center rounded-full border border-greyscale-200 bg-white text-center font-semibold text-greyscale-950 ${activeTab === idx && 'border-primary-600 !bg-primary-600 text-white'}`}
+											<motion.span
+												animate={{
+													backgroundColor:
+														activeTab === idx ? '#6366f1' : '#ffffff',
+													color:
+														activeTab === idx
+															? '#ffffff'
+															: activeTab > idx
+																? '#9CA3AF'
+																: '#1f2937',
+													borderColor:
+														activeTab === idx ? '#6366f1' : '#e5e7eb',
+												}}
+												transition={{ duration: 0.3 }}
+												className={`flex size-8 shrink-0 items-center justify-center rounded-full border text-center font-semibold`}
 											>
 												{idx + 1}
-											</span>
-											<div className="md:space-y-2">
-												<h3 className="text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:text-2xl">
+											</motion.span>
+											<div className="space-y-2 pt-1">
+												<motion.h3
+													animate={{
+														color: activeTab > idx ? '#9CA3AF' : '#1F2937',
+													}}
+													className="text-base font-semibold tracking-[-0.5px] md:text-xl lg:text-2xl"
+												>
 													{tab.title}
-												</h3>
-												<p className="text-[#5D5D5D]">{tab.text}</p>
+												</motion.h3>
+												<motion.p
+													initial={{ opacity: 0, y: 10 }}
+													animate={{
+														opacity: activeTab === idx ? 1 : 0.7,
+														y: activeTab === idx ? 0 : 5,
+														color: activeTab > idx ? '#9CA3AF' : '#5D5D5D',
+													}}
+													transition={{ duration: 0.3 }}
+													className="text-sm md:text-base"
+												>
+													{tab.text}
+												</motion.p>
 											</div>
-										</button>
+										</motion.div>
 									</motion.li>
 								))}
 							</ul>
@@ -134,4 +160,4 @@ const HowItWotks = () => {
 	)
 }
 
-export default HowItWotks
+export default HowItWorks
