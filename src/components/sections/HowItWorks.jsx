@@ -1,52 +1,32 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import LinkButton from '../LinkButton'
 import SectionSubtitle from '../SectionSubtitle'
 import SectionTitle from '../SectionTitle'
 
-const TABS_DATA = [
+const BLOCKS_DATA = [
 	{
 		id: '1',
 		title: 'Bulk upload 100s of PDF documents',
 		text: 'Risus facilisis pellentesque dapibus at est nunc duis nunc. Sed scelerisque tincidunt magna',
-		imageUrl: '/tab-1-full.webp',
+		imageUrl: '/how-1.png',
 	},
 	{
 		id: '2',
 		title: 'GPT4 turbo will process your documents',
 		text: 'Ask questions, extract information, and summarize everything with our advanced and friendly AI.',
-		imageUrl: '/tab-2-full.webp',
+		imageUrl: '/how-2.png',
 	},
 	{
 		id: '3',
 		title: 'Ask questions and chat with documents',
 		text: 'With the AI-generated output, you can quickly extract important data, navigate through the document with smart search.',
-		imageUrl: '/tab-3-full.webp',
+		imageUrl: '/how-3.png',
 	},
 ]
 const HowItWorks = () => {
-	const [activeTab, setActiveTab] = useState(0)
-	const sectionRef = useRef(null)
-	const { scrollYProgress } = useScroll({
-		target: sectionRef,
-		offset: ['start start', 'end end'],
-	})
-
-	const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.05])
-	const imageOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 1])
-
-	useEffect(() => {
-		const unsubscribe = scrollYProgress.on('change', (progress) => {
-			const nextTab = Math.floor(progress * TABS_DATA.length)
-			if (nextTab >= 0 && nextTab < TABS_DATA.length) {
-				setActiveTab(nextTab)
-			}
-		})
-		return () => unsubscribe()
-	}, [scrollYProgress])
 	return (
-		<section ref={sectionRef} className="relative min-h-[160vh]">
-			<div className="container sticky top-20">
+		<section>
+			<div className="container">
 				<SectionSubtitle>How It Works</SectionSubtitle>
 				<div className="mt-3 grid grid-cols-1 gap-2 md:mt-4 md:grid-cols-2 lg:gap-10">
 					<div>
@@ -71,88 +51,110 @@ const HowItWorks = () => {
 				</div>
 
 				<div className="mt-6 md:mt-10 lg:mt-20">
-					<div className="relative">
-						<div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-6 lg:gap-20">
-							<motion.div
-								style={{ scale: imageScale, opacity: imageOpacity }}
-								className="flex w-full items-center justify-center overflow-hidden rounded-2xl bg-greyscale-10 md:w-1/2"
-							>
-								<motion.img
-									key={TABS_DATA[activeTab].imageUrl}
-									initial={{ opacity: 0, scale: 0.8 }}
-									animate={{ opacity: 1, scale: 1 }}
-									exit={{ opacity: 0, scale: 0.8 }}
-									transition={{ duration: 0.5 }}
-									className="h-auto w-full max-w-full"
-									src={TABS_DATA[activeTab].imageUrl}
-									alt={`Image for ${TABS_DATA[activeTab].title}`}
-								/>
-							</motion.div>
+					<div className="grid gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+						<motion.div
+							viewport={{ once: true, margin: '-300px' }}
+							initial={{
+								opacity: 0,
+							}}
+							whileInView={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.6,
+							}}
+							className="relative rounded-3xl border border-[#CAD4FB] bg-primary-50 p-4 md:p-6"
+						>
+							<div className="bg-circle-blue-gradient shadow-circle-blue absolute -top-6 left-1/2 flex size-[51px] -translate-x-1/2 items-center justify-center rounded-full border border-white bg-red-300 text-lg font-semibold">
+								1
+							</div>
 
-							<ul className="w-full space-y-10 md:w-1/2">
-								{TABS_DATA.map((tab, idx) => (
-									<motion.li
-										key={tab.id}
-										initial={{ opacity: 0, x: 50 }}
-										animate={{
-											opacity: activeTab >= idx ? 1 : 0.5,
-											x: 0,
-										}}
-										transition={{ duration: 0.5, delay: idx * 0.1 }}
-										className="group relative z-10 overflow-visible"
-									>
-										<motion.div
-											className={`flex gap-3 text-left`}
-											animate={{
-												scale: activeTab === idx ? 1.05 : 1,
-											}}
-											transition={{ duration: 0.3 }}
-										>
-											<motion.span
-												animate={{
-													backgroundColor:
-														activeTab === idx ? '#6366f1' : '#ffffff',
-													color:
-														activeTab === idx
-															? '#ffffff'
-															: activeTab > idx
-																? '#9CA3AF'
-																: '#1f2937',
-													borderColor:
-														activeTab === idx ? '#6366f1' : '#e5e7eb',
-												}}
-												transition={{ duration: 0.3 }}
-												className={`flex size-8 shrink-0 items-center justify-center rounded-full border text-center font-semibold`}
-											>
-												{idx + 1}
-											</motion.span>
-											<div className="space-y-2 pt-1">
-												<motion.h3
-													animate={{
-														color: activeTab > idx ? '#9CA3AF' : '#1F2937',
-													}}
-													className="text-base font-semibold tracking-[-0.5px] md:text-xl lg:text-2xl"
-												>
-													{tab.title}
-												</motion.h3>
-												<motion.p
-													initial={{ opacity: 0, y: 10 }}
-													animate={{
-														opacity: activeTab === idx ? 1 : 0.7,
-														y: activeTab === idx ? 0 : 5,
-														color: activeTab > idx ? '#9CA3AF' : '#5D5D5D',
-													}}
-													transition={{ duration: 0.3 }}
-													className="text-sm md:text-base"
-												>
-													{tab.text}
-												</motion.p>
-											</div>
-										</motion.div>
-									</motion.li>
-								))}
-							</ul>
-						</div>
+							<div className="flex items-center md:min-h-[200px]">
+								<img
+									className="h-auto w-full max-w-full"
+									src="/how-1.webp"
+									alt="image"
+								/>
+							</div>
+							<div>
+								<h3 className="mt-3 text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+									Bulk upload 100s of PDF documents
+								</h3>
+								<p className="mt-2">
+									Upload and manage hundreds of PDF documents at once with our
+									bulk upload feature, saving you time and making document
+									management easier.
+								</p>
+							</div>
+						</motion.div>
+						<motion.div
+							viewport={{ once: true, margin: '-300px' }}
+							initial={{
+								opacity: 0,
+							}}
+							whileInView={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.6,
+							}}
+							className="relative rounded-3xl border border-[#B8ECFF] bg-[#EFFAFF] p-6"
+						>
+							<div className="bg-circle-lightblue-gradient shadow-circle-lightblue absolute -top-6 left-1/2 flex size-[51px] -translate-x-1/2 items-center justify-center rounded-full border border-white bg-red-300 text-lg font-semibold">
+								2
+							</div>
+							<div className="flex items-center md:min-h-[200px]">
+								<img
+									className="flex h-auto w-full max-w-full"
+									src="/how-2.webp"
+									alt="image"
+								/>
+							</div>
+							<div>
+								<h3 className="mt-3 text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+									GPT4 turbo will process your documents
+								</h3>
+								<p className="mt-2">
+									Process your documents with speed and precision, ensuring that
+									all your files are handled efficiently and accurately, and
+									saving you time.
+								</p>
+							</div>
+						</motion.div>
+						<motion.div
+							viewport={{ once: true, margin: '-300px' }}
+							initial={{
+								opacity: 0,
+							}}
+							whileInView={{
+								opacity: 1,
+							}}
+							transition={{
+								duration: 0.6,
+							}}
+							className="relative rounded-3xl border border-[#C6ECC9] bg-[#F2FBF3] p-6 md:col-span-2 lg:col-span-1"
+						>
+							<div className="bg-circle-lightgreen-gradient shadow-circle-lightgreen absolute -top-6 left-1/2 flex size-[51px] -translate-x-1/2 items-center justify-center rounded-full border border-white bg-red-300 text-lg font-semibold">
+								3
+							</div>
+							<div className="flex items-center md:min-h-[200px]">
+								<img
+									className="h-auto w-full max-w-full"
+									src="/how-3.webp"
+									alt="image"
+								/>
+							</div>
+							<div>
+								<h3 className="mt-3 text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+									Ask questions and chat with documents
+								</h3>
+								<p className="mt-2">
+									Engage with your documents. Ask questions, extract
+									information, and summarize everything with our advanced and
+									friendly AI.
+								</p>
+							</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>
